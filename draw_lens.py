@@ -1,6 +1,5 @@
 # this is a Monte-Carlo simulation of how likely you are to draw a Prismatic lens by turn 4
 # 	in the Tip the Scales deck. I'll exclude cases when you draw both Tips the Scales-s before Turn 4
-# the result is that if you HARD mulligan for it, you'll get it 52% w/o coin and 61% w/ coin. You can coin it out on three 58% of the time.
 
 
 # define 4 and 5 to be the two Prisms, and 8 and 9 to be the two Tips
@@ -75,7 +74,8 @@ def drawn_by_4(hand, coin):
 	if 8 in hand and 9 in hand:	return(False, False)
 	elif 4 in hand or 5 in hand:	return(True, False)
 	else:				return(False, False)
-				
+
+random.seed(12835789)
 t1 = time.time()
 n = int(1e5)      # change this to obtain more precise results, though 10^5 runs should be sufficiently accurate
 
